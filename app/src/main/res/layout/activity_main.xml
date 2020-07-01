@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonCapturar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Capturar imagen" />
+
+            <Button
+                android:id="@+id/buttonGrabar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Grabar audio" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonReproducir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reproducir archivo" />
+
+            <Button
+                android:id="@+id/buttonEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Editar archivo" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/musicvideo"/>
+
+</LinearLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/**
+ * Copyright (c) 2007, Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); 
+ * you may not use this file except in compliance with the License. 
+ * You may obtain a copy of the License at 
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0 
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ */
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="1">
+
+
+        <com.example.appmultimedia.components.audio_trimmer.WaveformView
+            android:id="@+id/waveform"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <com.example.appmultimedia.components.audio_trimmer.MarkerView
+            android:id="@+id/startmarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/start_marker"
+            android:nextFocusDown="@+id/endmarker"
+            android:src="@drawable/marker_left" />
+
+        <com.example.appmultimedia.components.audio_trimmer.MarkerView
+            android:id="@+id/endmarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/end_marker"
+            android:nextFocusUp="@+id/startmarker"
+            android:nextFocusDown="@+id/info"
+            android:src="@drawable/marker_right" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/info"
+        style="@style/AudioFileInfoOverlayText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:nextFocusUp="@+id/endmarker"
+        android:nextFocusDown="@+id/play" />
+
+    <LinearLayout
+        style="@style/ToolbarBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="62dip"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/rew"
+            style="@android:style/MediaButton"
+            android:layout_width="64dip"
+            android:layout_height="52dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginBottom="6dip"
+            android:contentDescription="@string/rewind"
+            app:srcCompat="@android:drawable/ic_media_previous" />
+
+        <ImageButton
+            android:id="@+id/play"
+            style="@android:style/MediaButton"
+            android:layout_width="71dip"
+            android:layout_height="52dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginBottom="6dip"
+            android:contentDescription="@string/play"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
+        <ImageButton
+            android:id="@+id/ffwd"
+            style="@android:style/MediaButton"
+            android:layout_width="64dip"
+            android:layout_height="52dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginBottom="6dip"
+            android:contentDescription="@string/ffwd"
+            app:srcCompat="@android:drawable/ic_media_next" />
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/HorizontalDividerTop" />
+
+    <LinearLayout style="@style/HorizontalDividerBottom" />
+
+    <LinearLayout
+        style="@style/ToolbarBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="62dip"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mark_start"
+            android:layout_width="wrap_content"
+            android:layout_height="31dip"
+            android:clickable="true"
+            android:gravity="center"
+            android:labelFor="@+id/starttext"
+            android:text="@string/start_label"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:id="@+id/starttext"
+            android:layout_width="70dip"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="30dip"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/mark_end"
+            android:layout_width="wrap_content"
+            android:layout_height="31dip"
+            android:clickable="true"
+            android:gravity="center"
+            android:labelFor="@+id/endtext"
+            android:text="@string/end_label"
+            android:textColor="#ffffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:id="@+id/endtext"
+            android:layout_width="70dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
